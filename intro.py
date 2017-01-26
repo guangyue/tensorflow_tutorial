@@ -15,9 +15,11 @@ import numpy as np
 # eventually end up in this placeholder
 x = tf.placeholder(tf.float32, shape=(2,), name='x')
 
+W = tf.Variable(tf.constant([0.2, 0.7]), name='W')
+
 # A Variable is another type of container for values that is initialized with values
 # You will typically use these for your model parameter
-W = tf.Variable(tf.constant([0.2, 0.7]), name='W')
+b = tf.Variable(tf.constant([0.2, 0.7]), name='W')
 
 # A symbolic mathematical operation
 y = tf.reduce_sum(x * W)
@@ -38,5 +40,5 @@ sess.run(init)
 print sess.run(y, feed_dict={x: [1.0, 1.0]})
 
 # How did we do?
-# python intrp.py
+# python intro.py
 # 0.9
